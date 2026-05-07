@@ -102,7 +102,9 @@ We define $\verdicts$ to derive from the sequence of verdicts introduced in the 
     }}
 \end{align}
 
-There are some constraints placed on the composition of this extrinsic: any verdict containing solely valid judgments implies the same report having at least one valid entry in the faults sequence $\xtfaults$. Any verdict containing solely invalid judgments implies the same report having at least two valid entries in the culprits sequence $\xtculprits$. Formally:
+There are some constraints placed on the composition of this extrinsic: any verdict containing solely valid  judgments implies the same report having at least one valid entry in the faults sequence $\xtfaults$. Any verdict containing solely invalid judgments implies the same report having at least two valid entries in the culprits sequence $\xtculprits$. 
+However, these offender sequences may be produced later than the corresponding extrinsic. Also, they must not include any keys which are already in the punish-set, as implied by \ref{eq:culpritsandfaults}.
+Formally:
 \begin{align}
   \forall \tup{\¬reporthash, \floor{\twothirds\Cvalcount} + 1} \in \verdicts &:
     \exists \tup{\¬reporthash, \dots} \in \xtfaults \\
